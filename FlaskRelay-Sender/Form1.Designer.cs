@@ -28,13 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.contentbox = new System.Windows.Forms.TextBox();
+            this.urlbox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.returnbox = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // contentbox
+            // 
+            this.contentbox.Location = new System.Drawing.Point(12, 71);
+            this.contentbox.Multiline = true;
+            this.contentbox.Name = "contentbox";
+            this.contentbox.Size = new System.Drawing.Size(263, 173);
+            this.contentbox.TabIndex = 0;
+            // 
+            // urlbox
+            // 
+            this.urlbox.Location = new System.Drawing.Point(12, 29);
+            this.urlbox.Name = "urlbox";
+            this.urlbox.Size = new System.Drawing.Size(263, 20);
+            this.urlbox.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 262);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(263, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Send";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_ClickAsync);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "URL";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Message:";
+            // 
+            // returnbox
+            // 
+            this.returnbox.Location = new System.Drawing.Point(12, 292);
+            this.returnbox.Multiline = true;
+            this.returnbox.Name = "returnbox";
+            this.returnbox.ReadOnly = true;
+            this.returnbox.Size = new System.Drawing.Size(213, 61);
+            this.returnbox.TabIndex = 5;
+            this.returnbox.Text = "Output:";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(232, 292);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(43, 62);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "CLS";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(294, 366);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.returnbox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.urlbox);
+            this.Controls.Add(this.contentbox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.Text = "Relay Sender";
+            this.TopMost = true;
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox contentbox;
+        private System.Windows.Forms.TextBox urlbox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox returnbox;
+        private System.Windows.Forms.Button button2;
     }
 }
 

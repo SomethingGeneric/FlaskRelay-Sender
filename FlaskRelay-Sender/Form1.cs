@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http;
 
 namespace FlaskRelay_Sender
 {
@@ -15,6 +16,21 @@ namespace FlaskRelay_Sender
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private async void button1_ClickAsync(object sender, EventArgs e)
+        {
+            string message = contentbox.Text;
+            string url = urlbox.Text;
+            HttpClient client = new HttpClient();
+            string responseBody = await client.GetStringAsync(url + "/message/?t=" + message);
+            returnbox.Text = returnbox.Text + Environment.NewLine + "------" + responseBody;
+            contentbox.Text = "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            returnbox.Text = "Output:";
         }
     }
 }
