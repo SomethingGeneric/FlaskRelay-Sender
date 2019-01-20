@@ -22,10 +22,15 @@ namespace FlaskRelay_Sender
         {
             string message = contentbox.Text;
             string url = urlbox.Text;
-            HttpClient client = new HttpClient();
-            string responseBody = await client.GetStringAsync(url + "/message/?t=" + message);
-            returnbox.Text = returnbox.Text + Environment.NewLine + "------" + responseBody;
-            contentbox.Text = "";
+            if (message != "" && url != ""){ 
+                HttpClient client = new HttpClient();
+                string responseBody = await client.GetStringAsync(url + "/message/?t=" + message);
+                returnbox.Text = returnbox.Text + Environment.NewLine + "------" + responseBody;
+                contentbox.Text = "";
+            } else
+            {
+                MessageBox.Show("Please fill out both boxes.", "Data Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
